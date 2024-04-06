@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body
+    class="bg-charcoalGrey flex flex-col text-[#242742] md:flex md:justify-center md:h-screen md:items-center"
+  >
+    <main
+      id="js-card"
+      class="flex flex-col bg-white md:rounded-3xl gap-6 md:flex-row md:justify-center md:p-5 h-screen md:h-fit"
+    >
+      <img
+        class="md:hidden"
+        src="images/illustration-sign-up-mobile.svg"
+        alt="signup image"
+      />
+
+      <div class="px-6 space-y-4 md:space-y-8 md:flex flex-col justify-center">
+        <h1 class="text-6xl md:text-5xl font-bold">Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="flex flex-col gap-3">
+          <li class="flex items-start gap-4">
+            <img src="images/icon-list.svg" alt="tick icon" /> Product discovery
+            and building what matters
+          </li>
+
+          <li class="flex items-start gap-4">
+            <img src="images/icon-list.svg" alt="tick icon" /> Measuring to
+            ensure updates are a success
+          </li>
+
+          <li class="flex items-start gap-4">
+            <img src="images/icon-list.svg" alt="tick icon" /> And much more!
+          </li>
+        </ul>
+        <form class="flex flex-col gap-4">
+          <div class="flex justify-between">
+            <p class="font-bold">Email address</p>
+            <!-- error message -->
+            <div id="js-error-text" class="hidden text-red-600">
+              Valid email required
+            </div>
+          </div>
+
+          <input
+            class="js-email focus-within:outline-gray-500 text-[#242742] invalid:text-tomato invalid:border-tomato border border-gray-400 py-3 px-4 rounded-md"
+            type="email"
+            name="email"
+            placeholder="email@company.com"
+          />
+
+          <input
+            type="button"
+            value="Subscribe to monthly newsletter"
+            onclick="validateEmail()"
+            class="js-subscribe hover:cursor-pointer bg-DarkSlateGrey text-white py-4 w-full hover:bg-gradient-to-r from-[#FF6257] to-[#EF8F43] hover:shadow-2xl hover:shadow-[#FF6257] rounded-md"
+          />
+        </form>
+      </div>
+      <img
+        class="hidden md:flex"
+        src="images/illustration-sign-up-desktop.svg"
+        alt="desktop image"
+      />
+    </main>
+
+    <div
+      id="js-success-card"
+      class="hidden max-w-min h-fit w-fit flex flex-col gap-7 p-12 rounded-3xl bg-white"
+    >
+      <img class="w-12" src="images/icon-success.svg" alt="tick image" />
+      <h1 class="text-5xl text-[#36384E] font-bold">Thanks for subscribing!</h1>
+      <p class="text-sm">
+        A confirmation email has been sent to
+        <span
+          ><a class="text-[#36384E] font-bold hover:underline" href="#"
+            >ash@loremcompany.com.</a
+          ></span
+        >
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <div>
+        <button
+          id="js-dismiss"
+          onclick="dismiss()"
+          class="bg-[#36384E] text-white py-3 w-full hover:bg-gradient-to-r from-[#FF6257] to-[#EF8F43] hover:shadow-2xl hover:shadow-[#FF6257] rounded-md"
+        >
+          Dismiss message
+        </button>
+      </div>
+    </div>
+
+    <!-- Success message end -->
+
+    <div class="attribution text-white pt-4">
+      Challenge by
+      <a
+        class="text-tomato hover:underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-tomato hover:underline"
+        href="https://www.frontendmentor.io/profile/JohnPugh688"
+        >John Pugh</a
+      >.
+    </div>
+    <script src="scripts/email-input.js"></script>
+  </body>
+</html>
